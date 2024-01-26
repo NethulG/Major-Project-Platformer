@@ -103,9 +103,11 @@ public class PLayerController : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && !isWallSliding)
         {
+
             if (isGrounded() || doubleJump)
             {
                 playerRb.velocity = new Vector2(playerRb.velocity.x, doubleJump ? doubleJumpForce : jumpForce); //allows for double jumping with the normal jump
+                animator.SetTrigger(AnimationStrings.jump);
                 doubleJump = !doubleJump;
             }
             
