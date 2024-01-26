@@ -63,11 +63,7 @@ public class PLayerController : MonoBehaviour
     }
 
     //-------------------------------subroutines-----------------------------------//
-    private void updateAnimationState()
-    {
-        animator.SetBool("IsMoving", HorizontalInput != 0); //adjusts movement animations
-        animator.SetBool("IsRunning", running); //adjusts running animations
-    }
+    
 
     private void MovePlayer(float horInput, bool sprint) // moves player horizontally, run/walk
     {
@@ -158,4 +154,11 @@ public class PLayerController : MonoBehaviour
         Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);
     }
 
+    private void updateAnimationState()
+    {
+        animator.SetBool(AnimationStrings.isMoving, HorizontalInput != 0); //adjusts movement animations
+        animator.SetBool(AnimationStrings.isRunning, running);    //adjusts running animations
+        animator.SetFloat(AnimationStrings.yVelocity, playerRb.velocity.y);
+        animator.SetBool(AnimationStrings.isGrounded, isGrounded());
+    }
 }
