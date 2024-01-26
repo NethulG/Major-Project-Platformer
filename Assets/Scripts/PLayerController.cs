@@ -5,6 +5,9 @@ using UnityEngine;
 #pragma warning disable
 public class PLayerController : MonoBehaviour
 {
+    //MADE BY NETHUL GOONAWARDENA
+    // THIS SCRIPT CONTAINS:
+        // Wallslide/Jump, Jump, Player Movement, Movement Animations
     //general
     private Rigidbody2D playerRb;
     private Animator animator;
@@ -28,12 +31,13 @@ public class PLayerController : MonoBehaviour
     public float castDist;
     public LayerMask groundLayer;
 
-    //wall sliding and wall jumping
+    //wall sliding and jumping
     private bool isWallSliding;
     private float wallSlideSpeed = 2f;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
 
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -152,6 +156,8 @@ public class PLayerController : MonoBehaviour
             isWallSliding = false;
         }
     }
+
+    
     private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);

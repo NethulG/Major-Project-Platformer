@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1517084300946994683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5323555232313615794}
+  m_Layer: 0
+  m_Name: wallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5323555232313615794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517084300946994683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.59, y: 0.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532009206756475518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1773192874932277525
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,9 +62,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.32, y: -3.8, z: -0.075161636}
-  m_LocalScale: {x: 1.1759008, y: 1.1759008, z: 1.1759008}
+  m_LocalScale: {x: 1.2802033, y: 1.2802033, z: 1.2802033}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5323555232313615794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2147983351423180527
@@ -75,7 +107,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2102281083
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b073f58521617624dac83cd759b1ef72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,8 +179,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027727427, y: -0.21382}
-  m_Size: {x: 0.70411813, y: 1.703848}
+  m_Offset: {x: 0.02, y: -0.18465129}
+  m_Size: {x: 0.9160434, y: 1.8422154}
   m_Direction: 0
 --- !u!114 &3045684155010624385
 MonoBehaviour:
@@ -166,11 +198,15 @@ MonoBehaviour:
   runSpeed: 12
   jumpForce: 15
   doubleJumpForce: 12
-  boxSize: {x: 0.88, y: 0.29}
-  castDist: 1.45
+  boxSize: {x: 0.4, y: 0.29}
+  castDist: 1.49
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  wallCheck: {fileID: 5323555232313615794}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!95 &2469727466344850139
 Animator:
   serializedVersion: 5
