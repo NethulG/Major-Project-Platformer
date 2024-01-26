@@ -162,5 +162,6 @@ public class PLayerController : MonoBehaviour
         animator.SetBool(AnimationStrings.isRunning, running);    //adjusts running animations
         animator.SetFloat(AnimationStrings.yVelocity, playerRb.velocity.y);
         animator.SetBool(AnimationStrings.isGrounded, isGrounded());
+        animator.SetBool(AnimationStrings.sliding, isWallSliding);
     }
 }
