@@ -5,9 +5,6 @@ using UnityEngine;
 #pragma warning disable
 public class PLayerController : MonoBehaviour
 {
-    //DEBUG
-    
-
     //general
     private Rigidbody2D playerRb;
     private Animator animator;
@@ -22,7 +19,6 @@ public class PLayerController : MonoBehaviour
     private bool facingRight = true;
 
     //jump
-    
     private bool doubleJump;
     public float jumpForce;
     public float doubleJumpForce;
@@ -32,6 +28,12 @@ public class PLayerController : MonoBehaviour
     public float castDist;
     public LayerMask groundLayer;
 
+    //wall sliding and wall jumping
+    private bool isWallSliding;
+    private float wallSlideSpeed = 2f;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -39,10 +41,7 @@ public class PLayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        jump();
-    }
+    
 
     
     void FixedUpdate()
@@ -53,8 +52,15 @@ public class PLayerController : MonoBehaviour
         
         flipCharacter(HorizontalInput);
 
-        updateAnimationState(); //update animations
+        
 
+    }
+    void Update()
+    {
+        Debug.Log(HorizontalInput);
+        jump();
+        wallSlide();
+        updateAnimationState();
     }
 
     //-------------------------------subroutines-----------------------------------//
@@ -114,10 +120,10 @@ public class PLayerController : MonoBehaviour
             playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y * 0.5f);
         }
 
-        Debug.Log(doubleJump);
+        //Debug.Log(doubleJump);
     }
 
-    public bool isGrounded()
+    public bool isGrounded() // checks whether player is on the ground.
     {
         if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDist, groundLayer ))
         {
@@ -129,7 +135,24 @@ public class PLayerController : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos() //allows to edit the boxcast easily
+    private bool IsWalled() //enables us to check if the player is touching a wall mid-air. Requires child GameO.
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+
+    private void wallSlide()
+    {
+        if (IsWalled() && !isGrounded() && HorizontalInput !=0f ) 
+        { 
+            isWallSliding = true;
+            playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, - wallSlideSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+    }
+    private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);
     }
