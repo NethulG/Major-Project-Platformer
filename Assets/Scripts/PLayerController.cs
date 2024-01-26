@@ -44,21 +44,16 @@ public class PLayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-
-    
-
     
     void FixedUpdate()
     {
         HorizontalInput = Input.GetAxisRaw("Horizontal");
         bool shiftkey = Input.GetKey(KeyCode.LeftShift);
         MovePlayer(HorizontalInput, shiftkey);
-        
+
         flipCharacter(HorizontalInput);
-
-        
-
     }
+
     void Update()
     {
         Debug.Log(HorizontalInput);
@@ -110,7 +105,7 @@ public class PLayerController : MonoBehaviour
         {
             doubleJump = false; //the player is not doublejumping
         }
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !isWallSliding)
         {
             if (isGrounded() || doubleJump)
             {
