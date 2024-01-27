@@ -25,6 +25,8 @@ public class PLayerController : MonoBehaviour
     private bool doubleJump;
     public float jumpForce;
     public float doubleJumpForce;
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
 
     //jumping raycast
     public Vector2 boxSize;
@@ -97,6 +99,14 @@ public class PLayerController : MonoBehaviour
 
     private void jump() //for jumping
     {
+        if (isGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
         if (isGrounded() && !Input.GetButton("Jump"))
         {
             doubleJump = false; //the player is not doublejumping
@@ -104,10 +114,13 @@ public class PLayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !isWallSliding)
         {
 
-            if (isGrounded() || doubleJump)
+            if (coyoteTimeCounter > 0f || doubleJump)
             {
                 playerRb.velocity = new Vector2(playerRb.velocity.x, doubleJump ? doubleJumpForce : jumpForce); //allows for double jumping with the normal jump
-                animator.SetTrigger(AnimationStrings.jump);
+                if (!doubleJump)
+                {
+                    animator.SetTrigger(AnimationStrings.jump);
+                }
                 doubleJump = !doubleJump;
                 Debug.Log(doubleJump);
             }
@@ -116,6 +129,7 @@ public class PLayerController : MonoBehaviour
         if (Input.GetButtonUp("Jump") && playerRb.velocity.y > 0f)
         {
             playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y * 0.5f);
+            coyoteTimeCounter = 0f;
         }
 
         //Debug.Log(doubleJump);
