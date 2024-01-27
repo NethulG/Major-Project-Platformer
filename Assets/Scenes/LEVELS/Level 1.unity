@@ -4168,8 +4168,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3045684155010624385, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
+      propertyPath: jumpForce
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045684155010624385, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: doubleJumpForce
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3045684155010624385, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: wallLayer.m_Bits
