@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 #pragma warning disable
 public class PLayerController : MonoBehaviour
@@ -13,6 +14,7 @@ public class PLayerController : MonoBehaviour
     private Rigidbody2D playerRb;
     private Animator animator;
     private bool shiftkey;
+    private bool isFacingRight = true;
 
     //terrain movement
     public float walkSpeed;
@@ -57,7 +59,12 @@ public class PLayerController : MonoBehaviour
         
         jump();
         wallSlide();
+
+        Flip();
+
         updateAnimationState();
+
+
     }
 
     void FixedUpdate()
@@ -73,7 +80,8 @@ public class PLayerController : MonoBehaviour
         
         MovePlayer(HorizontalInput, shiftkey);
         
-        flipCharacter(HorizontalInput);
+        
+        updateAnimationState();
     }
 
     //-------------------------------subroutines-----------------------------------//
@@ -192,5 +200,16 @@ public class PLayerController : MonoBehaviour
         animator.SetFloat(AnimationStrings.yVelocity, playerRb.velocity.y);
         animator.SetBool(AnimationStrings.isGrounded, isGrounded());
         animator.SetBool(AnimationStrings.sliding, isWallSliding);
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && HorizontalInput < 0f || !isFacingRight && HorizontalInput > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
     }
 }
