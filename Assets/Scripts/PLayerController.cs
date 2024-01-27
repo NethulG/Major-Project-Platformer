@@ -56,7 +56,7 @@ public class PLayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(HorizontalInput);
+        //debug.log(HorizontalInput);
         jump();
         wallSlide();
         updateAnimationState();
@@ -109,6 +109,7 @@ public class PLayerController : MonoBehaviour
                 playerRb.velocity = new Vector2(playerRb.velocity.x, doubleJump ? doubleJumpForce : jumpForce); //allows for double jumping with the normal jump
                 animator.SetTrigger(AnimationStrings.jump);
                 doubleJump = !doubleJump;
+                Debug.Log(doubleJump);
             }
             
         }
