@@ -3984,7 +3984,7 @@ Transform:
   m_GameObject: {fileID: 526291102}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3181343, y: 0.25958467, z: -16.535053}
+  m_LocalPosition: {x: -0.14849663, y: 5.246704, z: -16.535053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4179,6 +4179,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.8305839
       objectReference: {fileID: 0}
+    - target: {fileID: 3349903642106242011, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2a3907c28c64a3d4996758853b27e30e, type: 2}
     - target: {fileID: 3349903642106242011, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: m_Offset.x
       value: 0.020000001
@@ -50523,6 +50527,7 @@ GameObject:
   - component: {fileID: 1541989488}
   - component: {fileID: 1541989487}
   - component: {fileID: 1541989489}
+  - component: {fileID: 1541989490}
   m_Layer: 0
   m_Name: MainCam
   m_TagString: Untagged
@@ -50597,6 +50602,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1541989490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541989486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 2084998065}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
 --- !u!1 &1793060997
 GameObject:
   m_ObjectHideFlags: 0
