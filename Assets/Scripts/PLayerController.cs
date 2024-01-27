@@ -154,7 +154,7 @@ public class PLayerController : MonoBehaviour
 
     private void wallSlide()
     {
-        if (IsWalled() && !isGrounded() && HorizontalInput !=0f ) 
+        if (IsWalled() && !isGrounded()) 
         { 
             isWallSliding = true;
             playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, - wallSlideSpeed, float.MaxValue));
