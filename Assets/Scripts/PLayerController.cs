@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 #pragma warning disable
@@ -11,6 +12,7 @@ public class PLayerController : MonoBehaviour
     //general
     private Rigidbody2D playerRb;
     private Animator animator;
+    private bool shiftkey;
 
     //terrain movement
     public float walkSpeed;
@@ -47,25 +49,35 @@ public class PLayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
     
-    void FixedUpdate()
-    {
-        HorizontalInput = Input.GetAxisRaw("Horizontal");
-        bool shiftkey = Input.GetKey(KeyCode.LeftShift);
-        MovePlayer(HorizontalInput, shiftkey);
-
-        flipCharacter(HorizontalInput);
-    }
+    
 
     void Update()
     {
-        //debug.log(HorizontalInput);
+        HorizontalInput = Input.GetAxisRaw("Horizontal");
+        
         jump();
         wallSlide();
         updateAnimationState();
     }
 
+    void FixedUpdate()
+    {
+        if ( !IsWalled())
+        {
+            shiftkey = Input.GetKey(KeyCode.LeftShift);
+        }
+        else
+        {
+            shiftkey = false;
+        }
+        
+        MovePlayer(HorizontalInput, shiftkey);
+        
+        flipCharacter(HorizontalInput);
+    }
+
     //-------------------------------subroutines-----------------------------------//
-    
+
 
     private void MovePlayer(float horInput, bool sprint) // moves player horizontally, run/walk
     {
@@ -122,7 +134,7 @@ public class PLayerController : MonoBehaviour
                     animator.SetTrigger(AnimationStrings.jump);
                 }
                 doubleJump = !doubleJump;
-                Debug.Log(doubleJump);
+                
             }
             
         }
@@ -157,12 +169,14 @@ public class PLayerController : MonoBehaviour
         if (IsWalled() && !isGrounded()) 
         { 
             isWallSliding = true;
+            
             playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, - wallSlideSpeed, float.MaxValue));
         }
         else
         {
             isWallSliding = false;
         }
+        
     }
 
     
