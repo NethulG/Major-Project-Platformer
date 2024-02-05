@@ -3061,7 +3061,7 @@ Transform:
   m_GameObject: {fileID: 526291102}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4111137, y: 5.295005, z: -16.535053}
+  m_LocalPosition: {x: -4.4115067, y: 5.295005, z: -16.535053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3287,7 +3287,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1773192874932277525, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1059369841}
   m_SourcePrefab: {fileID: 100100000, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
 --- !u!1 &904645316
 GameObject:
@@ -36761,6 +36764,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1059369835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773192874932277525, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
+  m_PrefabInstance: {fileID: 848337888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1059369841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059369835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef9abe7819be4946af5785cc2682833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1305682772
 GameObject:
   m_ObjectHideFlags: 0

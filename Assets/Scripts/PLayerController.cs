@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEditor;
 using UnityEngine;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
@@ -56,8 +57,12 @@ public class PLayerController : MonoBehaviour
     void Update()
     {
         HorizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if (canMove)
+        {
+            jump();
+        }
         
-        jump();
         wallSlide();
 
         Flip();
@@ -77,16 +82,20 @@ public class PLayerController : MonoBehaviour
         {
             shiftkey = false;
         }
+        if (canMove)
+        {
+            MovePlayer(HorizontalInput, shiftkey);
+        }
         
-        MovePlayer(HorizontalInput, shiftkey);
         
         
         updateAnimationState();
     }
 
-    //-------------------------------subroutines-----------------------------------//
+    //-------------------------------subroutines/methods-----------------------------------//
 
 
+    public bool canMove { get {  return animator.GetBool(AnimationStrings.canMove); } } //get's the movement permission.
     private void MovePlayer(float horInput, bool sprint) // moves player horizontally, run/walk
     {
         if (sprint == true) //Enables horizontal movement, checking if sprint is on or off.
@@ -101,27 +110,13 @@ public class PLayerController : MonoBehaviour
         }
     }
 
-    private void flipCharacter(float horInput) //flips the character on movement
-    {
-        Vector3 characterScale = transform.localScale;
-        if (horInput < 0)
-        {
-            characterScale.x = -1;
-        }
-        else if (horInput > 0) 
-        { 
-            characterScale.x = 1;
-        }
-        transform.localScale = characterScale;
-        //function must be adjusted for wall jumping and attacking
-
-    }
+    
 
     private void jump() //for jumping
     {
         if (isGrounded())
         {
-            coyoteTimeCounter = coyoteTime;
+            coyoteTimeCounter = coyoteTime; //coyote time is setup to allow for player to jump 0.5s off the ground (forgiveness)
         }
         else
         {
@@ -174,7 +169,7 @@ public class PLayerController : MonoBehaviour
 
     private void wallSlide()
     {
-        if (IsWalled() && !isGrounded()) 
+        if (IsWalled() && !isGrounded())  //only allows wallside if you are on a wall, not on the ground
         { 
             isWallSliding = true;
             
@@ -202,9 +197,9 @@ public class PLayerController : MonoBehaviour
         animator.SetBool(AnimationStrings.sliding, isWallSliding);
     }
 
-    private void Flip()
+    public void Flip()
     {
-        if (isFacingRight && HorizontalInput < 0f || !isFacingRight && HorizontalInput > 0f)
+        if (isFacingRight && HorizontalInput < 0f || !isFacingRight && HorizontalInput > 0f)  //checks player direction and if moveinput given
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
