@@ -17,4 +17,7 @@ internal class AnimationStrings
     internal static readonly string isGrounded = "isGrounded";
     internal static readonly string jump = "jump";
     internal static readonly string sliding = "isSlide";
+
+    //door animationstrings
+    internal static readonly string PlayerEnter = "playerEnter";
 }
