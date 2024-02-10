@@ -3101,6 +3101,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &545132184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6511562745845071568, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+  m_PrefabInstance: {fileID: 9134197198709876865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -50828,11 +50833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4795088597499627292, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.7287
+      value: -15.96
       objectReference: {fileID: 0}
     - target: {fileID: 4795088597499627292, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5608
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 4795088597499627292, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50867,12 +50872,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4936394137353590850, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+      propertyPath: castDist
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936394137353590850, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+      propertyPath: boxSize.x
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936394137353590850, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+      propertyPath: boxSize.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936394137353590850, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+      propertyPath: walkSpeed
+      value: 4.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936394137353590850, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+      propertyPath: wallCheck
+      value: 
+      objectReference: {fileID: 545132184}
+    - target: {fileID: 4936394137353590850, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
       propertyPath: wallLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4936394137353590850, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511562745845071568, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511562745845071568, guid: 87b415a3af3ed944d83f0b3939aaba22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

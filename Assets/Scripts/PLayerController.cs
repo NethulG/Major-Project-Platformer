@@ -63,7 +63,7 @@ public class PLayerController : MonoBehaviour
             jump();
         }
         
-        wallSlide();
+        //wallSlide();
 
         Flip();
 
@@ -167,20 +167,20 @@ public class PLayerController : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
-    private void wallSlide()
-    {
-        if (IsWalled() && !isGrounded())  //only allows wallside if you are on a wall, not on the ground
-        { 
-            isWallSliding = true;
+    //private void wallSlide()
+    //{
+    //    if (IsWalled() && !isGrounded())  //only allows wallside if you are on a wall, not on the ground
+    //    { 
+    //        isWallSliding = true;
             
-            playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, - wallSlideSpeed, float.MaxValue));
-        }
-        else
-        {
-            isWallSliding = false;
-        }
+    //        playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, - wallSlideSpeed, float.MaxValue));
+    //    }
+    //    else
+    //    {
+    //        isWallSliding = false;
+    //    }
         
-    }
+    //}
 
     
     
