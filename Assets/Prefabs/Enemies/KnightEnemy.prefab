@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3455581477317053197}
   - component: {fileID: 2875279125834750228}
   - component: {fileID: 5043495022621334777}
+  - component: {fileID: 4936394137353590850}
   m_Layer: 0
   m_Name: KnightEnemy
   m_TagString: Untagged
@@ -29,9 +30,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.0227, y: -3.6009, z: 0}
-  m_LocalScale: {x: 1.0531, y: 1.0531, z: 1.0531}
+  m_LocalScale: {x: 1.1365277, y: 1.0839558, z: 1.0839558}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6511562745845071568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3455581477317053197
@@ -145,6 +147,50 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10816384, y: -0.14754976}
-  m_Size: {x: 1.5571533, y: 2.3471484}
+  m_Offset: {x: -0.11980174, y: -0.14754973}
+  m_Size: {x: 1.4640511, y: 2.3471482}
   m_Direction: 0
+--- !u!114 &4936394137353590850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711239344362929252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab15736dfe7c07d4a8332e0ea3aa322b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 0
+--- !u!1 &4418710732944109267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6511562745845071568}
+  m_Layer: 0
+  m_Name: wallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6511562745845071568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418710732944109267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4795088597499627292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

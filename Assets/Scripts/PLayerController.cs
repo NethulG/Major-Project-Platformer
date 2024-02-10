@@ -150,7 +150,7 @@ public class PLayerController : MonoBehaviour
         //Debug.Log(doubleJump);
     }
 
-    public bool isGrounded() // checks whether player is on the ground.
+    private bool isGrounded() // checks whether player is on the ground.
     {
         if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDist, groundLayer ))
         {
@@ -183,10 +183,7 @@ public class PLayerController : MonoBehaviour
     }
 
     
-    private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
-    {
-        Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);
-    }
+    
 
     private void updateAnimationState()
     {
