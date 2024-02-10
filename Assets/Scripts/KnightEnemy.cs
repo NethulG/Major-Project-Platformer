@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,11 @@ using UnityEngine;
 public class KnightEnemy : MonoBehaviour
 {
     public float walkSpeed;
-    public enum WalkingDirection { Left, Right }; //readable understanding of what Left and right do.
-    private WalkingDirection walkDirection;
-    private Vector2 walkdirectionVector;
     Rigidbody2D knightRb;
+    public enum WalkingDirection { Right, Left }; //readable understanding of what Left and right do.
+    private WalkingDirection _walkDirection;
+    private Vector2 walkdirectionVector = Vector2.right;
+    
     
 
     //checking for walls and edges
@@ -20,7 +22,29 @@ public class KnightEnemy : MonoBehaviour
     public float castDist;
     public LayerMask groundLayer;
 
+    private WalkingDirection WalkDirection
+    {
+        get { return _walkDirection; }
+        set
+        {
+            if (_walkDirection != value)
+            {
+                //flip the direction
+                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
+                if (value == WalkingDirection.Right)
+                {
+                    walkdirectionVector = Vector2.right;
+                }
+                else if (value == WalkingDirection.Left)
+                {
+                    walkdirectionVector = Vector2.left;
+                }
+            }
 
+
+            _walkDirection = value;
+        }
+    }
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,39 +59,36 @@ public class KnightEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsWalled())
+        if (IsWalled() && isGrounded())
         {
-            //FlipDirection();
+            FlipDirection();
+            Debug.Log("Detected");
         }
-        knightRb.velocity = new Vector2(walkSpeed * Vector2.right.x, knightRb.velocity.y);
+        knightRb.velocity = new Vector2(walkSpeed * walkdirectionVector.x, knightRb.velocity.y);
     }
 
-    private WalkingDirection WalkDirection
+    
+
+    
+
+    private void FlipDirection()
     {
-        get {  return walkDirection; }
-        set { 
-            if (walkDirection != value)
-            {
-                //flip the direction
-                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
-                if (value == WalkingDirection.Right)
-                {
-                    walkdirectionVector = Vector2.right;
-                } else if (value == WalkingDirection.Left)
-                {
-                    walkdirectionVector = Vector2.left;
-                }
-            }
-            
-            
-            walkDirection = value; 
+        if (WalkDirection == WalkingDirection.Right)
+        {
+            WalkDirection = WalkingDirection.Left;
+        } 
+        else if (WalkDirection == WalkingDirection.Left)
+        {
+            WalkDirection = WalkingDirection.Right;
+        }
+
+        else //incase of errors.
+        {
+            Debug.LogError("NOT DEFINED");
         }
     }
 
-    private bool IsWalled() //enables us to check if the enemy is touching a wall mid-air. Requires child GameO.
-    {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
-    }
+    
 
     private bool isGrounded() // checks whether player is on the ground.
     {
@@ -79,6 +100,11 @@ public class KnightEnemy : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private bool IsWalled() //enables us to check if the enemy is touching a wall mid-air. Requires child GameO.
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
 

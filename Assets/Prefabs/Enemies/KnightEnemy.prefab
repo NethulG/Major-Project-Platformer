@@ -162,7 +162,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab15736dfe7c07d4a8332e0ea3aa322b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0
+  walkSpeed: 4.07
+  wallCheck: {fileID: 6511562745845071568}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  boxSize: {x: 1.19, y: 0.21}
+  castDist: 1.48
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &4418710732944109267
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 4418710732944109267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.71, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
