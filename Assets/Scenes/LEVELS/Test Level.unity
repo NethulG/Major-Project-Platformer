@@ -133,15 +133,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: castDist
-      value: 1.46
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: boxSize.x
-      value: 0.54
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: boxSize.y
-      value: 0.24
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: groundLayer.m_Bits
