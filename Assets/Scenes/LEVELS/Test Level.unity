@@ -3502,9 +3502,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6157707348046811676, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
+      propertyPath: isDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157707348046811676, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
+      propertyPath: SceneToLoad
+      value: Level 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7601114650955947255, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: ExitDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
