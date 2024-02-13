@@ -10,7 +10,7 @@ public class DoorController : MonoBehaviour
     // Start is called before the first frame update
    
     public string SceneToLoad; //identify the scene
-    
+    public GameObject player;
     //identification of key or door
     public bool isDoor;
     
@@ -25,15 +25,19 @@ public class DoorController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        Debug.Log(keysCollected);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isDoor && collision.gameObject.CompareTag("Player"))
         {
             if (keysCollected == numKey)
             {
-                //display the "press E to enter"
-                // if the player presses E the next scene loads with a transition
-                //play sound
+                animator.SetTrigger(AnimationStrings.Open);
+                
                 Debug.Log("You have all keys");
                 
             }
