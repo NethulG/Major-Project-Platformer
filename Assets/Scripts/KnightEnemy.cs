@@ -62,7 +62,7 @@ public class KnightEnemy : MonoBehaviour
         if (IsWalled() && isGrounded())
         {
             FlipDirection();
-            Debug.Log("Detected");
+            //Debug.Log("Detected");
         }
         knightRb.velocity = new Vector2(walkSpeed * walkdirectionVector.x, knightRb.velocity.y);
     }
