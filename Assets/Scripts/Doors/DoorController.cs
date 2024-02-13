@@ -13,7 +13,7 @@ public class DoorController : MonoBehaviour
     
     //identification of key or door
     public bool isDoor;
-    public bool isKey;
+    
     private Animator animator;
     
     //check the number of keys
@@ -44,13 +44,7 @@ public class DoorController : MonoBehaviour
             
         }
 
-        //if (isKey && collision.gameObject.CompareTag("Player"))
-        //{
-        //    keysCollected++;
-        //    Debug.Log("Key collected" + keysCollected);
-        //    Destroy(gameObject);
-
-        //}
+        
     }
 
     private void finishLevel()
@@ -58,5 +52,8 @@ public class DoorController : MonoBehaviour
         SceneManager.LoadScene(SceneToLoad);
     }
 
-
+    public void incrementKeysCollected()
+    {
+        keysCollected++;
+    }
 }

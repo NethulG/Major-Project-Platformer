@@ -131,22 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
-      propertyPath: castDist
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
-      propertyPath: boxSize.x
-      value: 0.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
-      propertyPath: boxSize.y
-      value: 1.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 1773192874932277525, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: m_Name
       value: Player
@@ -190,6 +174,10 @@ PrefabInstance:
     - target: {fileID: 2532009206756475518, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045684155010624385, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
+      propertyPath: boxSize.x
+      value: 1.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3290,7 +3278,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneToLoad: 
   isDoor: 0
-  isKey: 0
   numKey: 0
 --- !u!61 &582611164
 BoxCollider2D:
