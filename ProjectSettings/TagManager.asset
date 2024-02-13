@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terrain
   - Door
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -51,6 +52,9 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 2067123519
+    locked: 0
+  - name: Items
+    uniqueID: 710936131
     locked: 0
   - name: Player
     uniqueID: 2102281083

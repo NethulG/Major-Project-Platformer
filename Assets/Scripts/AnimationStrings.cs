@@ -19,7 +19,8 @@ internal class AnimationStrings
     internal static readonly string sliding = "isSlide";
 
     //door animationstrings
-    internal static readonly string PlayerEnter = "playerEnter";
+    internal static readonly string Open = "PlayerEnter";
+    internal static readonly string close = "PlayerLeave";
 
     //attack animationstrings
     internal static readonly string AttackTrigger = "attack";
