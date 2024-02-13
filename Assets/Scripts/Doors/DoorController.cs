@@ -63,6 +63,7 @@ public class DoorController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         entryGranted = false;
+        animator.SetTrigger(AnimationStrings.close);
     }
 
     private void finishLevel()

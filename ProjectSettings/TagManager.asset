@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terrain
   - Door
+  - trap
   layers:
   - Default
   - TransparentFX
