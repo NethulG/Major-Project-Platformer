@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+//using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 #pragma warning disable
 public class PLayerController : MonoBehaviour
