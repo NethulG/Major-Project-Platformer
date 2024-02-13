@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb91d4aa1e9ad0f48be91169205636c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 
-  isDoor: 0
-  isKey: 0
-  numKey: 0
+  SceneToLoad: Level 1
+  player: {fileID: 0}
+  isDoor: 1
+  numKey: 3
 --- !u!95 &903981551995549701
 Animator:
   serializedVersion: 5

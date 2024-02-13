@@ -180,10 +180,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045684155010624385, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
-      propertyPath: boxSize.x
-      value: 1.01
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3223,7 +3219,7 @@ Transform:
   m_GameObject: {fileID: 526291102}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.606331, y: 5.3399944, z: -16.610214}
+  m_LocalPosition: {x: -4.5110893, y: 5.3399243, z: -16.610214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3678,18 +3674,6 @@ PrefabInstance:
     - target: {fileID: 3860053256298574031, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6157707348046811676, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
-      propertyPath: isDoor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6157707348046811676, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
-      propertyPath: numKey
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6157707348046811676, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
-      propertyPath: SceneToLoad
-      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 7601114650955947255, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
       propertyPath: m_Name

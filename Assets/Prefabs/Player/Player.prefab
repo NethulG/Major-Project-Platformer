@@ -199,7 +199,7 @@ MonoBehaviour:
   runSpeed: 12
   jumpForce: 15
   doubleJumpForce: 14
-  boxSize: {x: 0.4, y: 0.29}
+  boxSize: {x: 1.01, y: 0.29}
   castDist: 1.49
   groundLayer:
     serializedVersion: 2
