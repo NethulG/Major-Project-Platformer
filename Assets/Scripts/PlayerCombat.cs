@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
@@ -9,18 +10,38 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     private Animator animator;
-    //Player PlayerControlScript;
-    // Start is called before the first frame update
+
+    
+    public Vector2 boxSize;
+    public float castDist;
+    public LayerMask groundLayer;
     void Start()
     {
         animator = GetComponent<Animator>();
-        //Flip() = Player.getc
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Attack();
+        if (isGrounded())
+        {
+            Attack();
+        }
+        
+    }
+
+    private bool isGrounded()
+    {
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDist, groundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Attack()
@@ -31,6 +52,9 @@ public class PlayerCombat : MonoBehaviour
             animator.SetTrigger(AnimationStrings.AttackTrigger);
         }
     }
+    private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
+    {
+        Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);
+    }
 
-    
 }

@@ -204,4 +204,9 @@ public class PLayerController : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+    private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
+    {
+        Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);
+    }
 }

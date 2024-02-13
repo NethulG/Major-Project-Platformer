@@ -44,13 +44,13 @@ public class DoorController : MonoBehaviour
             
         }
 
-        if (isKey && collision.gameObject.CompareTag("Player"))
-        {
-            keysCollected++;
-            Debug.Log("Key collected" + keysCollected);
-            Destroy(gameObject);
+        //if (isKey && collision.gameObject.CompareTag("Player"))
+        //{
+        //    keysCollected++;
+        //    Debug.Log("Key collected" + keysCollected);
+        //    Destroy(gameObject);
 
-        }
+        //}
     }
 
     private void finishLevel()
