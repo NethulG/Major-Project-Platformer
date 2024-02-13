@@ -33,7 +33,10 @@ public class DoorController : MonoBehaviour
         }
     }
 
+    private void finishLevel()
+    {
 
+    }
 
 
 }
