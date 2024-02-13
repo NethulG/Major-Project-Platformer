@@ -33,6 +33,8 @@ public class DoorController : MonoBehaviour
             {
                 //display the "press E to enter"
                 // if the player presses E the next scene loads with a transition
+                //play sound
+                Debug.Log("You have all keys");
                 
             }
             if (keysCollected != numKey) 
@@ -44,6 +46,9 @@ public class DoorController : MonoBehaviour
 
         if (isKey && collision.gameObject.CompareTag("Player"))
         {
+            keysCollected++;
+            Debug.Log("Key collected" + keysCollected);
+            Destroy(gameObject);
 
         }
     }
