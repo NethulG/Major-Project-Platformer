@@ -197,8 +197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 7
   runSpeed: 12
-  jumpForce: 15
-  doubleJumpForce: 14
+  jumpForce: 14
+  doubleJumpForce: 10
   boxSize: {x: 1.01, y: 0.29}
   castDist: 1.49
   groundLayer:
