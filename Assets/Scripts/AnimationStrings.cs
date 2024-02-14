@@ -25,4 +25,8 @@ internal class AnimationStrings
     //attack animationstrings
     internal static readonly string AttackTrigger = "attack";
     internal static readonly string canMove = "canMove";
+
+
+    //door
+    internal static readonly string nextScene = "NextScene";
 }
