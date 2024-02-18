@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-#pragma warning disable
+
 
 public class DoorController : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class DoorController : MonoBehaviour
 
     public GameObject LevelTransition;
     
-    private bool withinCollider = false;
+   
     
     
     
