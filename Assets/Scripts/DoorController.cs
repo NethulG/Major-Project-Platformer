@@ -23,8 +23,8 @@ public class DoorController : MonoBehaviour
     private Animator levelAnimator;
     
     //check the number of keys
-    public float numKey;
-    private float keysCollected = 0f;
+    public int numKey;
+    private int keysCollected = 0;
 
     private bool entryGranted;
     private float transitionTime = 0.5f;
