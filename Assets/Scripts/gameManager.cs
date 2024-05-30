@@ -29,7 +29,7 @@ public class gameManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("trap"))
         {
-            //playerRb.bodyType = RigidbodyType2D.Static;   //prevent user from moving once dead.
+            playerRb.constraints = RigidbodyConstraints2D.FreezePositionX;//prevent user from moving once dead.
             gameObject.GetComponent<PLayerController>().enabled = false;
             die();
         }
