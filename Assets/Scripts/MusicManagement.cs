@@ -25,38 +25,6 @@ public class MusicManagement : MonoBehaviour
         }
     }
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        
-        bool playMusic = false;
-        foreach (int sceneIndex in musicScenesIndices)
-        {
-            if (scene.buildIndex == sceneIndex)
-            {
-                playMusic = true;
-                break;
-            }
-        }
-
-        
-        if (playMusic)
-        {
-            GetComponent<AudioSource>().Play();
-        }
-        else
-        {
-            GetComponent<AudioSource>().Stop();
-        }
-    }
+    
 }
 

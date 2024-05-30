@@ -1107,7 +1107,7 @@ Transform:
   m_GameObject: {fileID: 526291102}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.69539, y: 4.2635045, z: -16.610214}
+  m_LocalPosition: {x: -31.089525, y: 4.2517447, z: -16.610214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16221,7 +16221,7 @@ PrefabInstance:
       objectReference: {fileID: 1576050183}
     - target: {fileID: 6157707348046811676, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
       propertyPath: SceneToLoad
-      value: Level 2
+      value: Level 5
       objectReference: {fileID: 0}
     - target: {fileID: 6157707348046811676, guid: 90f9c1713bbdc9148a7da8d79b155500, type: 3}
       propertyPath: transitionTime
@@ -42797,6 +42797,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 101477419962435814, guid: 30a00bd5b08b317448b60255e2278508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6302679270969375509, guid: 30a00bd5b08b317448b60255e2278508, type: 3}
       propertyPath: m_Pivot.x
       value: 0

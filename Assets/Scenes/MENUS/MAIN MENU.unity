@@ -243,6 +243,50 @@ RectTransform:
   m_AnchoredPosition: {x: -4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &106052113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106052115}
+  - component: {fileID: 106052114}
+  m_Layer: 0
+  m_Name: LoadCursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &106052114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106052113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8402a0ffeb0e11949977433243021fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &106052115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106052113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.89087, y: 196.34245, z: -1.9230864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185624519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,7 +1511,7 @@ MonoBehaviour:
   doorOpen: {fileID: 8300000, guid: 265e8242e3b26c948b978f5dc5ac9f53, type: 3}
   pickKey: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
   swordHit: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
-  gameMusic: {fileID: 8300000, guid: 569be1e566712cf4fa0742cf8776723c, type: 3}
+  gameMusic: {fileID: 8300000, guid: e6c377e890df32448ad680113779e97c, type: 3}
 --- !u!4 &826014105
 Transform:
   m_ObjectHideFlags: 0
@@ -2094,6 +2138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1192013686}
   - component: {fileID: 1192013687}
+  - component: {fileID: 1192013688}
   m_Layer: 5
   m_Name: Voume (Add functionality)
   m_TagString: Untagged
@@ -2149,7 +2194,7 @@ MonoBehaviour:
     m_PressedColor: {r: 0.3207547, g: 0.20516197, b: 0.20516197, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -2170,10 +2215,35 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1192013688}
+        m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1192013688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192013685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb51dbbae393717468dcb17dd46ce438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 1192013687}
 --- !u!1 &1221439358
 GameObject:
   m_ObjectHideFlags: 0
@@ -20512,3 +20582,4 @@ SceneRoots:
   - {fileID: 43306786}
   - {fileID: 1141489432}
   - {fileID: 826014105}
+  - {fileID: 106052115}

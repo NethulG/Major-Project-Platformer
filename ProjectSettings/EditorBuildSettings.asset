@@ -19,8 +19,29 @@ EditorBuildSettings:
     guid: 697a206400ff449488721cd623108cfb
   - enabled: 1
     path: Assets/Scenes/MENUS/Credits.unity
-    guid: 6bad4f199b94678458009f83137002c8
+    guid: a782969eddcabdc43bb4d5330c32a1a8
   - enabled: 1
     path: Assets/Scenes/LEVELS/Level 1.unity
     guid: f0e8f20f0f035fc4c9dd044f7f620109
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/Level 2.unity
+    guid: 1f185874a96ee9043b97393da06e2eb7
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/Level 3.unity
+    guid: b4f8f187a03e6fd42b5295112d4d5d03
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/Level 4.unity
+    guid: 41a569f33edf76745bdbdaf662c5296e
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/Level 5.unity
+    guid: 75f68defc3b00af40a076aec6f438a33
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/Level 6.unity
+    guid: f264f110b15eb6647b52806dc17c8a29
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/Level 7.unity
+    guid: a152605688c8b5147b0c55635fc23f96
+  - enabled: 1
+    path: Assets/Scenes/MENUS/WIN.unity
+    guid: 6bad4f199b94678458009f83137002c8
   m_configObjects: {}

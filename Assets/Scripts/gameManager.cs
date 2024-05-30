@@ -31,10 +31,11 @@ public class gameManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("trap"))
         {
-            audioManager.playSFX(audioManager.dead);
+            
             playerRb.constraints = RigidbodyConstraints2D.FreezePositionX;//prevent user from moving once dead.
             gameObject.GetComponent<PLayerController>().enabled = false;
             animator.SetBool("isDead", true);
+            audioManager.playSFX(audioManager.dead);
         }
         
         
