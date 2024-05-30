@@ -1697,7 +1697,7 @@ Transform:
   m_GameObject: {fileID: 526291102}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.117094, y: 4.2621946, z: -16.610214}
+  m_LocalPosition: {x: -24.745874, y: 4.267585, z: -16.610214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2908,7 +2908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 822512764}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138957643}
+        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
+        m_MethodName: togglePauseState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &822512764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3193,7 +3205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 918110861}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138957642}
+        m_TargetAssemblyTypeName: menuManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &918110861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17175,7 +17199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1300390578}
-  playerController: {fileID: 1576050184}
+  playerObject: {fileID: 1576050183}
 --- !u!1001 &1186792084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40677,7 +40701,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1551966567}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138957642}
+        m_TargetAssemblyTypeName: menuManager, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1551966567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43709,10 +43745,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 204772455357738245, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
-      propertyPath: boxLayer.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 946859342083411640, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
       propertyPath: gameOver
       value: 
@@ -43776,17 +43808,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1773192874932277525, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
   m_PrefabInstance: {fileID: 1576050181}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1576050184 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3045684155010624385, guid: c88ee9d79721a8942b7b320de3dda621, type: 3}
-  m_PrefabInstance: {fileID: 1576050181}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576050183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f13b0ec08cddf04caef4ecd723d1f8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1584451756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4570207001545051396, guid: 9c8c9b3aa54483e4bab6467437b2727f, type: 3}

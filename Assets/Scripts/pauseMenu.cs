@@ -7,7 +7,9 @@ public class pauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
-    public PLayerController playerController;
+    
+
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -25,23 +27,34 @@ public class pauseMenu : MonoBehaviour
 
     void Resume()
     {
-        gameObject.GetComponent<PLayerController>().enabled = true;
+        
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1.0f;
         gameIsPaused = false;
+        Cursor.visible=false;
+        
     }
     void Pause()
     {
-        gameObject.GetComponent<PLayerController>().enabled = false;
+        
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
+        Cursor.visible=true;
+        
+
+
     }
     public void togglePauseState()
     {
-        gameObject.GetComponent<PLayerController>().enabled = true;
-        gameIsPaused = false;
-        Time.timeScale = 1.0f;
+        
         pauseMenuUI.SetActive(false);
+        Time.timeScale = 1.0f;
+        gameIsPaused = false;
+        Cursor.visible=false;
+        
+        
+        
+        
     }
 }

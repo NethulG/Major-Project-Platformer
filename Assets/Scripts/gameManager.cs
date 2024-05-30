@@ -37,5 +37,6 @@ public class gameManager : MonoBehaviour
     private void setScreen()
     {
         gameOver.SetActive(true);
+        Cursor.visible = true;
     }
 }

@@ -47,6 +47,7 @@ public class PLayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        Cursor.visible = false;
     }
     
     
