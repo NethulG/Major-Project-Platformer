@@ -28,7 +28,12 @@ public class DoorController : MonoBehaviour
 
     private bool entryGranted;
     private float transitionTime = 0.5f;
+    audioManager audioManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<audioManager>();
+    }
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -40,7 +45,9 @@ public class DoorController : MonoBehaviour
     {
         if (entryGranted && Input.GetKey(KeyCode.E))
         {
+            
             loadNextLevel();
+
         }
     }
 
@@ -51,16 +58,12 @@ public class DoorController : MonoBehaviour
             if (keysCollected == numKey)
             {
                 animator.SetTrigger(AnimationStrings.Open);
-                //activate the prompt to enter the next level ("e")
-                //Debug.Log("You have all keys");
+                audioManager.playSFX(audioManager.doorOpen);
                 entryGranted = true;
                 
                 
             }
-            if (keysCollected != numKey) 
-            { 
-                //display you are missing keys 
-            }
+            
             
         }
 

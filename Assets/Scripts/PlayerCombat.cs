@@ -20,7 +20,13 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float attackableRange = 2f;
     [SerializeField] private LayerMask boxLayer;
     private RaycastHit2D[] hit;
-    
+
+    audioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<audioManager>();
+    }
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -56,7 +62,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             swingSword();
-            
+            audioManager.playSFX(audioManager.swordHit);
             animator.SetTrigger(AnimationStrings.AttackTrigger);
 
 

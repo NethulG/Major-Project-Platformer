@@ -6,6 +6,12 @@ public class breakableBox : MonoBehaviour
 {
     // Start is called before the first frame update
     private Animator animator;
+    audioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<audioManager>();
+    }
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -16,5 +22,6 @@ public class breakableBox : MonoBehaviour
     {
         animator.SetTrigger(AnimationStrings.hit);
         Destroy(gameObject, 1f);
+        audioManager.playSFX(audioManager.boxBreak);
     }
 }
