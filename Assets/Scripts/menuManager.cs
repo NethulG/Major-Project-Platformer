@@ -6,14 +6,14 @@ using UnityEngine.UIElements;
 
 public class menuManager : MonoBehaviour
 {
-    public string sceneToLoad;
+    
 
 
 
     // Start is called before the first frame update
-    public void MoveToGame()
+    public void LoadScene(int index)
     {
-        SceneManager.LoadScene("Test Level"); //move edit this later on to go to the loadgame scene.
+        SceneManager.LoadScene(index); //move edit this later on to go to the loadgame scene.
     }
 
     public void ExitGame()
@@ -21,10 +21,7 @@ public class menuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void MoveToCredits()
-    {
-        //this will bring up a panel that has all the credits
-    }
+    
 
     
 }
