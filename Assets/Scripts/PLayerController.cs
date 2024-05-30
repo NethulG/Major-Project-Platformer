@@ -55,14 +55,13 @@ public class PLayerController : MonoBehaviour
     void Update()
     {
         HorizontalInput = Input.GetAxisRaw("Horizontal");
-        wallSlide();
+        //wallSlide();
         if (canMove)
         {
             jump();
         }
         
-        //wallSlide();
-
+        
         Flip();
 
         updateAnimationState();
@@ -72,14 +71,11 @@ public class PLayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ( !IsWalled())
-        {
-            shiftkey = Input.GetKey(KeyCode.LeftShift);
-        }
-        else
-        {
-            shiftkey = false;
-        }
+        
+        
+        shiftkey = Input.GetKey(KeyCode.LeftShift);
+        
+        
         if (canMove)
         {
             MovePlayer(HorizontalInput, shiftkey);
@@ -160,25 +156,25 @@ public class PLayerController : MonoBehaviour
         }
     }
 
-    private bool IsWalled() //enables us to check if the player is touching a wall mid-air. Requires child GameO.
-    {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
-    }
+    //private bool IsWalled() //enables us to check if the player is touching a wall mid-air. Requires child GameO.
+    //{
+    //    return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    //}
 
-    private void wallSlide()
-    {
-        if (IsWalled() && !isGrounded())  //only allows wallside if you are on a wall, not on the ground
-        {
-            isWallSliding = true;
+    //private void wallSlide()
+    //{
+    //    if (IsWalled() && !isGrounded())  //only allows wallside if you are on a wall, not on the ground
+    //    {
+    //        isWallSliding = true;
 
-            playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, -wallSlideSpeed, float.MaxValue));
-        }
-        else
-        {
-            isWallSliding = false;
-        }
+    //        playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, -wallSlideSpeed, float.MaxValue));
+    //    }
+    //    else
+    //    {
+    //        isWallSliding = false;
+    //    }
 
-    }
+    //}
 
 
 

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4437197957029243206}
   - component: {fileID: 722516772484299373}
   - component: {fileID: 3276703238114621387}
-  - component: {fileID: 1873628687739866046}
+  - component: {fileID: 3762013896266414492}
+  - component: {fileID: 6512680593381777291}
   m_Layer: 0
   m_Name: Moving Saw
   m_TagString: trap
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2080172521
-  m_SortingLayer: 1
+  m_SortingLayerID: 1513962379
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 887997445, guid: 021361ab4c0993747838cf315f482bb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,8 +108,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &1873628687739866046
-BoxCollider2D:
+--- !u!114 &3762013896266414492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558185583461679826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f8989190aeb184a8026a1bc3e3fd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 3
+--- !u!70 &6512680593381777291
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,16 +156,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
-    newSize: {x: 4, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4, y: 4}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.012226582, y: 0.028894424}
+  m_Size: {x: 1.3346128, y: 1.382478}
+  m_Direction: 0
