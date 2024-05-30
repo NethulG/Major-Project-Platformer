@@ -11,8 +11,13 @@ public class gameManager : MonoBehaviour
     private Rigidbody2D playerRb;
     [SerializeField] GameObject gameOver;
     public PLayerController playerController;
-    
-    
+
+    audioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<audioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +31,11 @@ public class gameManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("trap"))
         {
+            
             playerRb.constraints = RigidbodyConstraints2D.FreezePositionX;//prevent user from moving once dead.
             gameObject.GetComponent<PLayerController>().enabled = false;
             animator.SetBool("isDead", true);
+            audioManager.playSFX(audioManager.dead);
         }
         
         
