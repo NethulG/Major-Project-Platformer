@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LEVELS/Test Level.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 0
+    path: Assets/Scenes/MENUS/Load game.unity
+    guid: d6ab719cf6ae35f41b8ff940d2b6908d
   - enabled: 1
     path: Assets/Scenes/MENUS/MAIN MENU.unity
     guid: fb69d87171c144c4d8271923e834e2f2
   - enabled: 1
-    path: Assets/Scenes/MENUS/Load game.unity
-    guid: d6ab719cf6ae35f41b8ff940d2b6908d
+    path: Assets/Scenes/MENUS/Load Level.unity
+    guid: 697a206400ff449488721cd623108cfb
+  - enabled: 1
+    path: Assets/Scenes/MENUS/Credits.unity
+    guid: 6bad4f199b94678458009f83137002c8
   - enabled: 1
     path: Assets/Scenes/LEVELS/Level 1.unity
     guid: f0e8f20f0f035fc4c9dd044f7f620109
