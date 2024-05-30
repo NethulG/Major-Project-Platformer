@@ -56,13 +56,11 @@ public class PlayerCombat : MonoBehaviour
             
             animator.SetTrigger(AnimationStrings.AttackTrigger);
 
+
         }
     }
     
-    private void detect()
-    {
-        hit = Physics2D.CircleCastAll(attackTransform.position, attackableRange, transform.right, 0f, attackableLayer);
-    }
+    
     private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);

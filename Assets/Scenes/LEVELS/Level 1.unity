@@ -41929,6 +41929,7 @@ GameObject:
   - component: {fileID: 2098209807}
   - component: {fileID: 2098209806}
   - component: {fileID: 2098209808}
+  - component: {fileID: 2098209809}
   m_Layer: 0
   m_Name: BreakBox
   m_TagString: Untagged
@@ -42048,6 +42049,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &2098209809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098209805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a32b984c7fc5f94bbdd34c9c3e8a3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2109404939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4570207001545051396, guid: 9c8c9b3aa54483e4bab6467437b2727f, type: 3}
