@@ -8,10 +8,7 @@ using UnityEngine;
 #pragma warning disable
 public class PLayerController : MonoBehaviour
 {
-    //MADE BY NETHUL GOONAWARDENA
-    // THIS SCRIPT CONTAINS:
-        // Wallslide/Jump, Jump, Player Movement, Movement Animations
-    //general
+    
     private Rigidbody2D playerRb;
     private Animator animator;
     private bool shiftkey;
@@ -57,7 +54,7 @@ public class PLayerController : MonoBehaviour
     void Update()
     {
         HorizontalInput = Input.GetAxisRaw("Horizontal");
-
+        wallSlide();
         if (canMove)
         {
             jump();
@@ -167,23 +164,23 @@ public class PLayerController : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
-    //private void wallSlide()
-    //{
-    //    if (IsWalled() && !isGrounded())  //only allows wallside if you are on a wall, not on the ground
-    //    { 
-    //        isWallSliding = true;
-            
-    //        playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, - wallSlideSpeed, float.MaxValue));
-    //    }
-    //    else
-    //    {
-    //        isWallSliding = false;
-    //    }
-        
-    //}
+    private void wallSlide()
+    {
+        if (IsWalled() && !isGrounded())  //only allows wallside if you are on a wall, not on the ground
+        {
+            isWallSliding = true;
 
-    
-    
+            playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Clamp(playerRb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+
+    }
+
+
+
 
     private void updateAnimationState()
     {

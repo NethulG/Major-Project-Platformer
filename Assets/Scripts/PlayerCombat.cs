@@ -15,6 +15,11 @@ public class PlayerCombat : MonoBehaviour
     public Vector2 boxSize;
     public float castDist;
     public LayerMask groundLayer;
+
+    private Transform attackTransform;
+    [SerializeField] private float attackableRange = 1.5f;
+    [SerializeField] private LayerMask boxLayer;
+    private RaycastHit2D[] hit;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -48,13 +53,23 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            //Debug.Log("Fire");
+            
             animator.SetTrigger(AnimationStrings.AttackTrigger);
+
+
         }
     }
+    private void swingSword()
+    {
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, attackableRange, Vector2.right, 0f, boxLayer);
+        if (hit.collider != null)
+        {
+            hit.collider.SendMessage("OnSwordHit");
+        }
+    }
+    
     private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDist, boxSize);
     }
-
 }
