@@ -18,7 +18,7 @@ public class PlayerCombat : MonoBehaviour
 
     private Transform attackTransform;
     [SerializeField] private float attackableRange = 1.5f;
-    [SerializeField] private LayerMask attackableLayer;
+    [SerializeField] private LayerMask boxLayer;
     private RaycastHit2D[] hit;
     void Start()
     {
@@ -59,7 +59,14 @@ public class PlayerCombat : MonoBehaviour
 
         }
     }
-    
+    private void swingSword()
+    {
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, attackableRange, Vector2.right, 0f, boxLayer);
+        if (hit.collider != null)
+        {
+            hit.collider.SendMessage("OnSwordHit");
+        }
+    }
     
     private void OnDrawGizmos() //allows for easier editing of ray/wire cast tools.
     {
