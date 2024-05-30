@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -24,13 +25,18 @@ public class gameManager : MonoBehaviour
     {
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("trap"))
         {
-            playerRb.bodyType = RigidbodyType2D.Static;   //prevent user from moving once dead.
+            //playerRb.bodyType = RigidbodyType2D.Static;   //prevent user from moving once dead.
             gameObject.GetComponent<PLayerController>().enabled = false;
-
+            die();
         }
+    }
+    private void die()
+    {
+        
+        animator.SetBool("isDead", true);
     }
 }
