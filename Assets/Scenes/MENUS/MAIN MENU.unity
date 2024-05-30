@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf10f170b3ecea4da12d6ed73f99a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicScenesIndices: 000000000100000002000000
+  musicScenesIndices: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
 --- !u!1 &837635748
 GameObject:
   m_ObjectHideFlags: 0
