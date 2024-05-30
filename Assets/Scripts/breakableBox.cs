@@ -14,7 +14,7 @@ public class breakableBox : MonoBehaviour
     // Update is called once per frame
     private void OnSwordHit()
     {
-        animator.SetTrigger("Hit");
+        animator.SetTrigger(AnimationStrings.hit);
         Destroy(gameObject, 1f);
     }
 }

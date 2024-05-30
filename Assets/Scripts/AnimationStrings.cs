@@ -29,4 +29,8 @@ internal class AnimationStrings
 
     //door
     internal static readonly string nextScene = "NextScene";
+
+
+    //box
+    internal static readonly string hit = "Hit";
 }

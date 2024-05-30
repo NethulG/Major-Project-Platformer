@@ -17,7 +17,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask groundLayer;
 
     private Transform attackTransform;
-    [SerializeField] private float attackableRange = 1.5f;
+    [SerializeField] private float attackableRange = 2f;
     [SerializeField] private LayerMask boxLayer;
     private RaycastHit2D[] hit;
     void Start()
