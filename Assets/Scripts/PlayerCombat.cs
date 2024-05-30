@@ -20,6 +20,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float attackableRange = 2f;
     [SerializeField] private LayerMask boxLayer;
     private RaycastHit2D[] hit;
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -32,6 +33,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (isGrounded())
         {
+
             Attack();
         }
         
@@ -54,6 +56,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             swingSword();
+            
             animator.SetTrigger(AnimationStrings.AttackTrigger);
 
 
