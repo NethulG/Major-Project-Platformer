@@ -53,7 +53,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            
+            swingSword();
             animator.SetTrigger(AnimationStrings.AttackTrigger);
 
 
